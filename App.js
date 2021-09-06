@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Alert,
   PermissionsAndroid,
   Platform,
   Text,
@@ -198,9 +199,9 @@ const App = () => {
             "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTcyN2UwZTRjOWY3MWI3M2U1ODc1YWQzMGY1NWI3MjdjZThlNmQ5OGM4OWQxNzRkNTRmOWIyMjM1Njc2M2Q3NmQ4YTQ0ZDJlNTZkM2NjYzgiLCJpYXQiOiIxNjMwNjg3NjQyLjU0MDc1NyIsIm5iZiI6IjE2MzA2ODc2NDIuNTQwNzcwIiwiZXhwIjoiMTY2MjIyMzY0Mi4zMTEzMTEiLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.n4t8TV3kgpDAh2k3LB_ia89T6lmaWixgNrXLvpc5l3WIh2MDe6rzQmQPxsnFwEUrGkxwKpYmGuxeWktj7G_uHMEQsej2g_w44VxFbrjgbu2pibeSOqkjo8UhI5eCO_-9S6vLqJLuCIpZ-VK7y8ZspK4g2jBPWurysa7Y36Qh_cY9EyuPfKvjzHlSEVbSQiqdUq93uUIJnIm78GagoxrF7Yz7hv7I0melGCC6SakG9uT8DjOPesCcHlMAv1KfySL3J9V7GUOb6sKr7b22kjZHCNil3TYQ0bkTAxh5IUWetPP-_2zYBMYPkHS2pdw6Lh4LN5Csgu-yJn_XJxMZ-G8xbBzYZ4wP0KISMoVOpu_I9buoG_MjZMvgvsVE-V_S8IwE7pUYL6HnqYSTKahyAkJqja2C8V5rKcvEcQ2fDI7gNdJeuLgcGF813pAvlvwhyBXodChWCkQvqqzXpfYCmDjLarZmFcuhaQSmp4ZOphCBt4WUEEJCSAMvUWI9jgM1efoFyXsUVfYvIsnpWdtOm8B-NA2XaewHAVRNDPuDP1LWsXfsKOmwIS-AsVT_srFxqyIKhJSDlJG_ZRelISpnF4AwfnHFrIpsS179UGgN9k-rRkIHK7i171bZNnd42jvo2yRAZCPbzXdy5m7fU9yUQJnoUK8ReOur-ooIlpkgw5OsrRs",
           },
       })
-      .then((response) => console.log("response:", response.data))
+      .then((response) => {console.log("response:", response.data), Alert.alert('Enviado:',response.data.data.audio)})
       // .then((result) => console.log("result:", result))
-      .catch((error) => console.log("error", error));
+      .catch((error) => {console.log("error", error),Alert.alert('Error:',error)});
   };
 
   return (
